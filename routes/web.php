@@ -1,4 +1,3 @@
-
 <?php
 
 use App\Http\Controllers\CartController;
@@ -7,6 +6,7 @@ use App\Http\Livewire\CartCounter;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
+Route::get('/catalog', [ProductController::class, 'index'])->name('catalog');
 Route::get('/category/{category:slug}', [ProductController::class, 'category'])->name('category');
 Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name('product.show');
 Route::get('/search', [ProductController::class, 'search'])->name('product.search');
@@ -19,4 +19,3 @@ Route::prefix('cart')->group(function () {
     Route::post('/clear', [CartController::class, 'clear'])->name('cart.clear');
     Route::post('/update/{product}', [CartController::class, 'update'])->name('cart.update');
 });
-

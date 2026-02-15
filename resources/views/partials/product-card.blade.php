@@ -104,7 +104,7 @@
 
         <!-- Цена и кнопка в футуристическом стиле -->
         <div class="mt-6 pt-4 border-t border-gray-800">
-            <div class="flex items-end justify-between">
+            <div class="flex items-end justify-between gap-3">
                 <div>
                     @if($product->is_sale && $product->old_price)
                         <div class="flex flex-col">
@@ -128,24 +128,24 @@
                 </div>
 
                 <!-- Кнопка корзины в стиле "киберпанк" -->
-                <form action="{{ route('cart.add', $product) }}" method="POST">
+                <form action="{{ route('cart.add', $product) }}" method="POST" class="shrink-0">
                     @csrf
                     <input type="hidden" name="quantity" value="1">
                     <button
                         type="submit"
-                        class="relative w-14 h-14 bg-transparent border-2 border-[#E31834] rounded-xl overflow-hidden group/btn transition-all duration-300 hover:w-36"
+                        class="relative w-14 h-14 bg-transparent border-2 border-[#E31834] rounded-xl overflow-hidden group/btn transition-all duration-300 hover:scale-105"
                         title="Добавить в корзину"
                     >
                         <!-- Фон кнопки -->
                         <span class="absolute inset-0 bg-[#E31834] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></span>
                         
                         <!-- Иконка корзины -->
-                        <svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-[#E31834] group-hover/btn:text-white transition-all duration-300 group-hover/btn:left-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-[#E31834] group-hover/btn:text-white transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                         
                         <!-- Текст при наведении -->
-                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-white font-mono text-sm opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 delay-150">
+                        <span class="hidden">
                             ADD
                         </span>
                         

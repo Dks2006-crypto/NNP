@@ -1,7 +1,11 @@
 <div class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <!-- Кнопка "Назад" в стиле терминала -->
-        <a href="{{ url()->previous() }}" class="group inline-flex items-center text-gray-400 hover:text-[#E31834] mb-8 transition-all duration-300 relative">
+        @php
+            $previousUrl = url()->previous();
+            $backUrl = $previousUrl !== url()->current() ? $previousUrl : route('catalog');
+        @endphp
+        <a href="{{ $backUrl }}" class="group inline-flex items-center text-gray-400 hover:text-[#E31834] mb-8 transition-all duration-300 relative">
             <div class="absolute inset-0 bg-[#E31834] rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity"></div>
             <div class="relative flex items-center gap-3 bg-slate-800/50 backdrop-blur-sm px-4 py-2 rounded-xl border border-slate-700 group-hover:border-[#E31834] transition-colors">
                 <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -6,17 +6,17 @@
     <div class="flex flex-col md:flex-row gap-8">
         <!-- Sidebar -->
         <aside class="w-full md:w-1/4 lg:w-1/5">
-            <div class="bg-white p-6 rounded-lg shadow">
+            <div class="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 p-6 rounded-2xl shadow-xl text-white">
                 <h3 class="font-bold text-lg mb-4">Категории</h3>
                 <ul class="space-y-2">
                     @foreach($categories as $cat)
                         <li>
                             <a
                                 href="{{ route('category', $cat->slug) }}"
-                                class="block px-3 py-2 rounded {{ $category->id == $cat->id ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100' }}"
+                                class="block px-3 py-2.5 rounded-lg transition-colors duration-200 {{ $category->id == $cat->id ? 'bg-[#E31834]/15 text-[#E31834] border border-[#E31834]/40' : 'text-slate-200 hover:bg-slate-700/60' }}"
                             >
                                 {{ $cat->name }}
-                                <span class="text-xs text-gray-500 ml-1">({{ $cat->products_count }})</span>
+                                <span class="text-xs text-slate-400 ml-1">({{ $cat->products_count }})</span>
                             </a>
                         </li>
                     @endforeach

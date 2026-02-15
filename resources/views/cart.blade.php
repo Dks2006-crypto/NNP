@@ -223,7 +223,7 @@
 
                             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                                 <a
-                                    href="{{ route('product') }}"
+                                    href="{{ route('home') }}"
                                     class="group/btn relative px-8 py-4 bg-gradient-to-r from-[#E31834] to-purple-600 text-white rounded-2xl font-bold overflow-hidden transition-all duration-500 transform hover:scale-105"
                                 >
                                     <span class="relative z-10 flex items-center gap-3">
