@@ -15,12 +15,16 @@
     <script src="https://cdn.jsdelivr.net/npm/heroicons@2.0.11/outline"></script>
 
     <style>
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
         [x-cloak] { display: none !important; }
         /* Дополнительные кастомные стили */
         .aspect-square { aspect-ratio: 1/1; }
     </style>
 </head>
-<body class="bg-[#CEDCFF]">
+<body class="bg-[#CEDCFF] overflow-x-hidden">
  <!-- Header -->
 <header class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700/50">
     <!-- Фоновый эффект с сеткой -->
